@@ -1,0 +1,130 @@
+format = """
+[╭╴](fg:gray_700)\
+$os$directory$git_branch$git_commit[ ](fg:primary_950) \
+$fill\
+[ ]()$status$nodejs$cmd_duration\
+[](fg:gray_700)[ ]()
+[╰╴❯](fg:gray_700)[ ]()"""
+
+scan_timeout = 10
+add_newline = true
+palette = 'elegantTheme'
+
+[line_break]
+disabled = true
+
+[fill]
+style = 'gray_700'
+symbol = '─'
+
+[os]
+disabled = false
+style = 'bold bg:primary_700 fg:gray_200'
+format = '[](primary_700)[ ]($style)[](bold fg:primary_700 bg:primary_950)'
+
+[directory]
+truncation_length = 1
+style = 'bold bg:primary_950 fg:gray_200'
+format = '[](bold fg:primary_950 bg:primary_950)[$path ]($style)'
+truncation_symbol = " ~/…/"
+repo_root_style = 'bold bg:primary_950 fg:gray_200'
+repo_root_format = '[](bold fg:primary_950 bg:primary_950)[ $repo_root ]($style)'
+
+[directory.substitutions]
+"~/Documents" = ""
+"~/Downloads" = ""
+"~/Music" = ""
+"~/Pictures" = " "
+"~/Videos" = ""
+"~/Projects" = "󱌢"
+"~/School" = "󰑴"
+"~/GitHub" = ""
+"~/.config" = ""
+"~/" = " ~"
+
+[git_branch]
+symbol = ""
+style = "bold fg:success_500 bg:primary_700"
+format = '[](fg:primary_700 bg:primary_950)[ $symbol $branch(:$remote_branch) ]($style)'
+
+[git_commit]
+tag_disabled = false
+only_detached = false
+tag_symbol = '󰓹 '
+style = 'fg:gray_200 bg:primary_700'
+format = '[$hash$tag ]($style)[](fg:primary_700 bg:primary_950)'
+
+[status]
+disabled = false
+style = 'bold bg:primary_950 fg:gray_200'
+success_symbol = "[  ](fg:success_500 bg:primary_700)"
+symbol = "[  ](fg:danger_500 bg:primary_700)"
+format = '[ ](fg:primary_950)[](fg:primary_700 bg:primary_950)[$symbol]($style)[](fg:primary_700 bg:primary_950)'
+
+[cmd_duration]
+min_time = 0
+show_milliseconds = true
+format = "[ $duration ](fg:gray_200 bg:primary_950)[](fg:primary_950)"
+
+[nodejs]
+symbol = ""
+style = "fg:success_500 bg:primary_950"
+format = '[ $symbol ($version)]($style)'
+
+[palettes.elegantTheme]
+primary_950 = '#192152'
+primary_900 = '#223386'
+primary_800 = '#2337aa'
+primary_700 = '#2442d1'
+primary_600 = '#3059e4'
+primary_500 = '#4275ef'
+primary_400 = '#669af4'
+primary_300 = '#97bdf9'
+primary_200 = '#c1d6fc'
+primary_100 = '#dce7fd'
+primary_50 = '#f0f5fe'
+
+information_900 = '#1E3A8A'
+information_800 = '#1E40AF'
+information_700 = '#1D4ED8'
+information_600 = '#2563EB'
+information_500 = '#3B82F6'
+information_400 = '#60A5FA'
+information_300 = '#93C5FD'
+information_200 = '#BFDBFE'
+information_100 = '#DBEAFE'
+information_50 = '#EFF6FF'
+
+success_900 = '#14532D'
+success_800 = '#166534'
+success_700 = '#15803D'
+success_600 = '#16A34A'
+success_500 = '#22C55E'
+success_400 = '#4ADE80'
+success_300 = '#86EFAC'
+success_200 = '#BBF7D0'
+success_100 = '#DCFCE7'
+success_50 = '#F0FDF4'
+
+danger_900 = '#7F1D1D'
+danger_800 = '#991B1B'
+danger_700 = '#B91C1C'
+danger_600 = '#DC2626'
+danger_500 = '#EF4444'
+danger_400 = '#F87171'
+danger_300 = '#FCA5A5'
+danger_200 = '#FECACA'
+danger_100 = '#FEE2E2'
+danger_50 = '#FEF2F2'
+
+gray_950 = '#030712'
+gray_900 = '#111827'
+gray_800 = '#1F2937'
+gray_700 = '#374151'
+gray_600 = '#4B5563'
+gray_500 = '#6B7280'
+gray_400 = '#9CA3AF'
+gray_300 = '#D1D5DB'
+gray_200 = '#E5E7EB'
+gray_100 = '#F3F4F6'
+gray_50 = '#F9FAFB'

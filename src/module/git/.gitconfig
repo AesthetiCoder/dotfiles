@@ -1,0 +1,31 @@
+[include]
+  path = ~/.gitconfig.local
+
+[core]
+  excludesfile = ~/.gitignore
+  attributesfile = ~/.gitattributes
+  whitespace = space-before-tab,tab-in-indent,trailing-space,tabwidth=2
+  untrackedCache = true
+
+[apply]
+  whitespace = fix
+
+[push]
+  default = simple
+
+[merge]
+  log = true
+
+[init]
+	defaultBranch = master
+
+[checkout]
+	defaultRemote = origin
+
+[color]
+  status = auto
+  diff = auto
+  branch = auto
+  interactive = auto
+  grep = auto
+  ui = auto
